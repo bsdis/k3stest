@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "ks3test_helm.fullname" . }}
+  name: {{ include "ks3testhelm.fullname" . }}
   labels:
-    {{- include "ks3test_helm.labels" . | nindent 4 }}
+    {{- include "ks3testhelm.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -12,4 +12,4 @@ spec:
       protocol: TCP
       name: http
   selector:
-    {{- include "ks3test_helm.selectorLabels" . | nindent 4 }}
+    {{- include "ks3testhelm.selectorLabels" . | nindent 4 }}
